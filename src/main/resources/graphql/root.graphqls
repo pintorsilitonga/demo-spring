@@ -7,8 +7,12 @@ type Query {
 }
 
 # Root Mutation (operation apa aja yang update/delete) di dalam app ini
-#type Mutation {
-    #addNewProfile(username: String!, bio: String!, email: String!) : Profile!
+type Mutation {
+    # Pake Custom input bisa nih
+    addProfile(request: ProfileRequest!) : Profile!
+    editProfile(id: Int!, request: ProfileRequest!) : Profile!
+
+
     #addNewArticle(title: String!, text: String!, author: Profile!) : Article!
     #addNewComment(text: String!, author: Profile!) : Comment!
-#}
+}
