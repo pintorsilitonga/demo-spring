@@ -1,0 +1,7 @@
+type Article {
+    id: Int!
+    title: String!
+    text: String!
+    author: Profile!
+    comments: [Comment]
+}

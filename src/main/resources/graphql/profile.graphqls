@@ -1,0 +1,6 @@
+type Profile {
+    id: Int!
+    username: String!
+    bio: String
+    email: String
+}

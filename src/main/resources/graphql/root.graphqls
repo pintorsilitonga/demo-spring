@@ -1,0 +1,14 @@
+# Root query-query apa aja yang bisa dijalanin di spring app ini
+type Query {
+    articles: [Article]
+    profiles: [Profile]
+    comments: [Comment]
+    article(id: Int!): Article
+}
+
+# Root Mutation (operation apa aja yang update/delete) di dalam app ini
+#type Mutation {
+    #addNewProfile(username: String!, bio: String!, email: String!) : Profile!
+    #addNewArticle(title: String!, text: String!, author: Profile!) : Article!
+    #addNewComment(text: String!, author: Profile!) : Comment!
+#}
