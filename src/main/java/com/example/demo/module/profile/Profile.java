@@ -20,4 +20,6 @@ public class Profile {
     private String username;
     private String bio;
     private String email;
+    @Column(name = "is_active")
+    private boolean active;
 }
