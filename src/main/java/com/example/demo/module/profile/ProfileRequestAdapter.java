@@ -17,5 +17,14 @@ public class ProfileRequestAdapter {
         profile.setUsername(request.getUsername());
         profile.setEmail(request.getEmail());
         profile.setBio(request.getBio());
+        profile.setActive(true);
+    }
+
+    public void deactivateProfile(Profile profile) {
+        profile.setActive(false);
+    }
+
+    public void activateProfile(Profile profile) {
+        profile.setActive(true);
     }
 }

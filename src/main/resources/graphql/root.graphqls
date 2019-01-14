@@ -11,6 +11,8 @@ type Mutation {
     # Pake Custom input bisa nih
     addProfile(request: ProfileRequest!) : Profile!
     editProfile(id: Int!, request: ProfileRequest!) : Profile!
+    deleteProfile(id: Int!) : Profile!
+    undeleteProfile(id: Int!) : Profile!
 
 
     #addNewArticle(title: String!, text: String!, author: Profile!) : Article!

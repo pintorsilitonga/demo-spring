@@ -3,4 +3,5 @@ type Profile {
     username: String!
     bio: String
     email: String
+    active: Boolean!
 }
