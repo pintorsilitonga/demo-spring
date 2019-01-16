@@ -22,4 +22,31 @@ public class ArticleMutationResolver implements GraphQLMutationResolver {
 
         return articleService.addArticle(article);
     }
+
+    @Transactional
+    public Article deleteArticle(Long id) {
+        Article article = articleService.findOne(id);
+
+        articleRequestAdapter.deleteArticle(article);
+
+        return articleService.update(article);
+    }
+
+    @Transactional
+    public Article undeleteArticle(Long id) {
+        Article article = articleService.findOne(id);
+
+        articleRequestAdapter.undeleteArticle(article);
+
+        return articleService.update(article);
+    }
+
+    @Transactional
+    public Article editArticle(Long id, ArticleRequest request) {
+        Article article = articleService.findOne(id);
+
+        articleRequestAdapter.updateArticle(article, request);
+
+        return articleService.update(article);
+    }
 }

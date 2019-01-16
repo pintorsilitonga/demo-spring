@@ -15,6 +15,8 @@ public class Article {
     private Long id;
     private String title;
     private String text;
+    @Column(name = "is_active")
+    private boolean active;
 
     @ManyToOne
     @JoinColumn(name = "profile_id")

@@ -2,6 +2,7 @@ type Article {
     id: Int!
     title: String!
     text: String!
+    active: Boolean!
     profile: Profile
     comments: [Comment]
 }

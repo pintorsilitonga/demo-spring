@@ -7,7 +7,8 @@ import org.springframework.stereotype.Component;
 @Component
 public class ArticleRequestAdapter {
 
-    @Autowired private ProfileService profileService;
+    @Autowired
+    private ProfileService profileService;
 
     public Article toArticle(ArticleRequest articleRequest) {
         Article article = new Article();
@@ -21,5 +22,13 @@ public class ArticleRequestAdapter {
         article.setText(articleRequest.getText());
         article.setTitle(articleRequest.getTitle());
         article.setProfile(profileService.getById(articleRequest.getProfileId()));
+    }
+
+    public void deleteArticle(Article article) {
+        article.setActive(false);
+    }
+
+    public void undeleteArticle(Article article) {
+        article.setActive(true);
     }
 }
