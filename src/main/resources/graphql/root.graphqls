@@ -14,7 +14,8 @@ type Mutation {
     deleteProfile(id: Int!) : Profile!
     undeleteProfile(id: Int!) : Profile!
 
+    addArticle(request: ArticleRequest!) : Article!
 
-    #addNewArticle(title: String!, text: String!, author: Profile!) : Article!
-    #addNewComment(text: String!, author: Profile!) : Comment!
+    #addNewArticle(title: String!, text: String!, profile: Profile!) : Article!
+    #addNewComment(text: String!, profile: Profile!) : Comment!
 }
