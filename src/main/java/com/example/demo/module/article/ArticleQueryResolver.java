@@ -5,6 +5,7 @@ import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import javax.transaction.Transactional;
 import java.util.List;
 
 @Component
@@ -13,11 +14,13 @@ public class ArticleQueryResolver implements GraphQLQueryResolver {
     @Autowired
     private ArticleService articleService;
 
-    public List<Article> getArticles() {
+    public Iterable<Article> getArticles() {
+
         return articleService.getAll();
     }
 
+    @Transactional
     public Article getArticle(Long id) {
-        return articleService.getOne(id);
+        return articleService.findOne(id);
     }
 }

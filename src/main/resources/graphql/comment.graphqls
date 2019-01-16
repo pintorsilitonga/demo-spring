@@ -1,5 +1,5 @@
 type Comment {
     id: Int!
     text: String!
-    author: Profile!
+    profile: Profile!
 }

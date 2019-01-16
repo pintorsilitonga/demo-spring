@@ -12,7 +12,7 @@ import java.util.List;
 public class ProfileQueryResolver implements GraphQLQueryResolver {
     @Autowired private ProfileService profileService;
 
-    public List<Profile> getProfiles() {
+    public Iterable<Profile> getProfiles() {
         return profileService.getAll();
     }
 }

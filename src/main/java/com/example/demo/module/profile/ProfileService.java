@@ -10,16 +10,16 @@ public class ProfileService {
     @Autowired
     private ProfileRepository profileRepository;
 
-    public List<Profile> getAll() {
+    public Iterable<Profile> getAll() {
         return profileRepository.findAll();
     }
 
     public Profile addProfile(Profile newProfile) {
-        return profileRepository.saveAndFlush(newProfile);
+        return profileRepository.save(newProfile);
     }
 
     public Profile getById(Long id) {
-        return profileRepository.getOne(id);
+        return profileRepository.findById(id).get();
     }
 
     public Profile update(Profile profile) {

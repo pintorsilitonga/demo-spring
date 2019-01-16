@@ -1,13 +1,11 @@
 package com.example.demo.module.comment;
 
+import com.example.demo.module.profile.Profile;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Data
 @Entity
@@ -19,5 +17,7 @@ public class Comment {
     private Long id;
     private String text;
     private Long articleId;
-    private Long authorId;
+    @ManyToOne
+    @JoinColumn(name = "profile_id")
+    private Profile profile;
 }

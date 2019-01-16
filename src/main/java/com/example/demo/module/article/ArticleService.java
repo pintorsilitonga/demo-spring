@@ -10,11 +10,15 @@ public class ArticleService {
     @Autowired
     private ArticleRepository articleRepository;
 
-    public List<Article> getAll() {
+    public Iterable<Article> getAll() {
         return articleRepository.findAll();
     }
 
-    public Article getOne(Long id) {
-        return articleRepository.getOne(id);
+    public Article findOne(Long id) {
+        return articleRepository.findById(id).get();
+    }
+
+    public Article addArticle(Article article) {
+        return articleRepository.save(article);
     }
 }

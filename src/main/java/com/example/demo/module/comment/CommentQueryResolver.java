@@ -13,7 +13,7 @@ public class CommentQueryResolver implements GraphQLQueryResolver {
     @Autowired
     private CommentService commentService;
 
-    public List<Comment> getComments() {
+    public Iterable<Comment> getComments() {
         return commentService.getAll();
     }
 }

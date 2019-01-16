@@ -10,7 +10,7 @@ public class CommentService {
     @Autowired
     private CommentRepository commentRepository;
 
-    public List<Comment> getAll() {
+    public Iterable<Comment> getAll() {
         return commentRepository.findAll();
     }
 }
