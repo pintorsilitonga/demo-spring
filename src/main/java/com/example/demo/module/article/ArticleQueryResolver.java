@@ -17,6 +17,6 @@ public class ArticleQueryResolver implements GraphQLQueryResolver {
     }
 
     public Article getArticle(Long id) {
-        return articleService.findOne(id);
+        return articleService.findById(id);
     }
 }

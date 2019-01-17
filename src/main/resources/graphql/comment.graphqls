@@ -2,4 +2,5 @@ type Comment {
     id: Int!
     text: String!
     profile: Profile!
+    article: Article!
 }

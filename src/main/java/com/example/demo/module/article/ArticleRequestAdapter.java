@@ -21,7 +21,7 @@ public class ArticleRequestAdapter {
     public void updateArticle(Article article, ArticleRequest articleRequest) {
         article.setText(articleRequest.getText());
         article.setTitle(articleRequest.getTitle());
-        article.setProfile(profileService.getById(articleRequest.getProfileId()));
+        article.setProfile(profileService.findById(articleRequest.getProfileId()));
     }
 
     public void deleteArticle(Article article) {

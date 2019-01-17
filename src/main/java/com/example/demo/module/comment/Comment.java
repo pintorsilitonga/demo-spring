@@ -1,5 +1,6 @@
 package com.example.demo.module.comment;
 
+import com.example.demo.module.article.Article;
 import com.example.demo.module.profile.Profile;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -16,8 +17,12 @@ public class Comment {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String text;
-    private Long articleId;
+
     @ManyToOne
     @JoinColumn(name = "profile_id")
     private Profile profile;
+
+    @ManyToOne
+    @JoinColumn(name = "article_id")
+    private Article article;
 }

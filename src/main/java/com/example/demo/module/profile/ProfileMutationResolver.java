@@ -25,7 +25,7 @@ public class ProfileMutationResolver implements GraphQLMutationResolver {
 
     @Transactional
     public Profile editProfile(Long id, ProfileRequest request) {
-        Profile profile = profileService.getById(id);
+        Profile profile = profileService.findById(id);
 
         profileRequestAdapter.updateProfile(profile, request);
 
@@ -34,7 +34,7 @@ public class ProfileMutationResolver implements GraphQLMutationResolver {
 
     @Transactional
     public Profile deleteProfile(Long id) {
-        Profile profile = profileService.getById(id);
+        Profile profile = profileService.findById(id);
 
         profileRequestAdapter.deactivateProfile(profile);
 
@@ -43,7 +43,7 @@ public class ProfileMutationResolver implements GraphQLMutationResolver {
 
     @Transactional
     public Profile undeleteProfile(Long id) {
-        Profile profile = profileService.getById(id);
+        Profile profile = profileService.findById(id);
 
         profileRequestAdapter.activateProfile(profile);
 

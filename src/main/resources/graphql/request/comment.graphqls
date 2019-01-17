@@ -1,0 +1,5 @@
+input CommentRequest {
+    text: String!
+    profileId: Int!
+    articleId: Int!
+}

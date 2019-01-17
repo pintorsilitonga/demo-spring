@@ -25,7 +25,7 @@ public class ArticleMutationResolver implements GraphQLMutationResolver {
 
     @Transactional
     public Article deleteArticle(Long id) {
-        Article article = articleService.findOne(id);
+        Article article = articleService.findById(id);
 
         articleRequestAdapter.deleteArticle(article);
 
@@ -34,7 +34,7 @@ public class ArticleMutationResolver implements GraphQLMutationResolver {
 
     @Transactional
     public Article undeleteArticle(Long id) {
-        Article article = articleService.findOne(id);
+        Article article = articleService.findById(id);
 
         articleRequestAdapter.undeleteArticle(article);
 
@@ -43,7 +43,7 @@ public class ArticleMutationResolver implements GraphQLMutationResolver {
 
     @Transactional
     public Article editArticle(Long id, ArticleRequest request) {
-        Article article = articleService.findOne(id);
+        Article article = articleService.findById(id);
 
         articleRequestAdapter.updateArticle(article, request);
 
