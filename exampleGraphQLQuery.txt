@@ -1,0 +1,138 @@
+mutation AddComment($input:CommentRequest!){
+  addComment(request:$input){
+    text
+    profile{
+      username
+    }
+    article{
+      title
+      text
+    }
+  }
+
+}
+
+#mutation EditArticle($input: ArticleRequest!){
+#  editArticle(id: 11, request: $input){
+#    id
+#    title
+#    text
+#    active
+#    profile {
+#      username
+#      bio
+#      email
+#    }
+#  }
+#}
+
+mutation UndeleteArticle{
+  undeleteArticle(id: 13) {
+    id
+    title
+    text
+    active
+  }
+}
+
+mutation DeleteArticle{
+  deleteArticle(id: 13){
+    id
+    title
+    text
+    active
+  }
+}
+
+#mutation AddArticle($input: ArticleRequest!) {
+#  addArticle(request: $input) {
+#    text
+#   	title
+#    profile {
+#      username
+#    }
+#  }
+#}
+
+mutation ActivateProfile{
+  undeleteProfile(id: 2) {
+    username
+    bio
+    email
+    active
+  }
+}
+
+mutation DeleteProfile {
+  deleteProfile(id: 2) {
+    username
+    bio
+    email
+    active
+  }
+}
+
+#mutation AddProfile($input: ProfileRequest!) {
+ # addProfile(request: $input) {
+  #  username
+   # bio
+    #email
+  #}
+#}
+
+#mutation EditProfile($input: ProfileRequest!) {
+ # editProfile(id: 1, request: $input) {
+  #  username
+   # bio
+#    email
+ # }
+#}
+
+query GetAllProfile {
+  profiles {
+    id
+    username
+    bio
+    email
+    active
+  }
+}
+
+query GetAllArticles {
+  articles {
+    id
+    title
+    text
+    active
+    profile {
+      username
+      bio
+      email
+    }
+  }
+}
+
+query GetAllComments{
+  comments {
+    id
+    text
+    profile {
+      id
+      username
+      bio
+    }
+    article{
+      id
+      title
+      text
+    }
+  }
+}
+
+query GetOneArticle{
+  article(id: 3) {
+    title
+    text
+    active
+  }
+}
