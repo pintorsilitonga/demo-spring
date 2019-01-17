@@ -3,6 +3,7 @@ package com.example.demo.module.article;
 import com.coxautodev.graphql.tools.GraphQLMutationResolver;
 import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Component;
 
 import javax.transaction.Transactional;
@@ -24,6 +25,7 @@ public class ArticleMutationResolver implements GraphQLMutationResolver {
     }
 
     @Transactional
+    @PreAuthorize("hasRole('ROLE_ADMIN')")
     public Article deleteArticle(Long id) {
         Article article = articleService.findById(id);
 
@@ -33,6 +35,7 @@ public class ArticleMutationResolver implements GraphQLMutationResolver {
     }
 
     @Transactional
+    @PreAuthorize("hasRole('ROLE_ADMIN')")
     public Article undeleteArticle(Long id) {
         Article article = articleService.findById(id);
 

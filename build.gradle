@@ -30,6 +30,7 @@ dependencies {
 	compile('com.graphql-java:graphql-java-tools:4.3.0')
 	compile('org.springframework.boot:spring-boot-starter-web')
 	compile('mysql:mysql-connector-java')
+	compile('org.springframework.boot:spring-boot-starter-security')
 	implementation('org.springframework.boot:spring-boot-starter-data-jpa')
 	compileOnly('org.projectlombok:lombok')
 	testImplementation('org.springframework.boot:spring-boot-starter-test')
