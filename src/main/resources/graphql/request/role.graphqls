@@ -1,0 +1,5 @@
+input RoleRequest {
+    name: String!
+    description: String!
+    authorityIds: [String]!
+}
