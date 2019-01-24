@@ -1,16 +1,50 @@
-mutation AddComment($input:CommentRequest!){
-  addComment(request:$input){
-    text
-    profile{
-      username
-    }
-    article{
-      title
-      text
+mutation EditRole($input:RoleRequest!){
+  editRole(id: 1,request:$input) {
+    id
+    name
+    description
+    authorities{
+      name
+      description
     }
   }
-
 }
+
+query GetRole{
+  role(id: 1) {
+    id
+    name
+    description
+    authorities{
+      name
+      description
+    }
+  }
+}
+
+mutation AddRole($input:RoleRequest!){
+  addRole(request: $input){
+    id
+    name
+    description
+    authorities{
+      name
+    }
+  }
+}
+
+#mutation AddComment($input:CommentRequest!){
+#  addComment(request:$input){
+#    text
+#    profile{
+#      username
+#    }
+#    article{
+#      title
+#      text
+#    }
+#  }
+#}
 
 #mutation EditArticle($input: ArticleRequest!){
 #  editArticle(id: 11, request: $input){
@@ -72,13 +106,23 @@ mutation DeleteProfile {
   }
 }
 
-#mutation AddProfile($input: ProfileRequest!) {
- # addProfile(request: $input) {
-  #  username
-   # bio
-    #email
-  #}
-#}
+mutation AddProfile($input: ProfileRequest!) {
+  addProfile(request: $input) {
+    username
+    bio
+    email
+  }
+}
+
+{
+  "input": {
+    "username": "pinkfloyd",
+    "password": "senpaikudasai",
+    "bio": "senpai 55555555",
+    "email": "pintor.silion@senpai.com",
+    "roleId": 1
+  }
+}
 
 #mutation EditProfile($input: ProfileRequest!) {
  # editProfile(id: 1, request: $input) {
@@ -94,7 +138,14 @@ query GetAllProfile {
     username
     bio
     email
-    active
+    status
+    role {
+      name
+      authorities {
+        name
+        description
+      }
+    }
   }
 }
 
