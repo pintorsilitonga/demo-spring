@@ -1,0 +1,6 @@
+type Authority {
+    id: String!
+    name: String!
+    description: String!
+    roles: [Role]
+}
