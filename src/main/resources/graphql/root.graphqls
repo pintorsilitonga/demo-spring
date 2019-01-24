@@ -4,6 +4,7 @@ type Query {
     profiles: [Profile]
     comments: [Comment]
     article(id: Int!): Article
+    role(id: Int!): Role!
 }
 
 # Root Mutation (operation apa aja yang update/delete) di dalam app ini
@@ -21,4 +22,7 @@ type Mutation {
 
     addComment(request: CommentRequest!) : Comment!
     editComment(id: Int!, text: String!) : Comment!
+
+    addRole(request: RoleRequest!) : Role!
+    editRole(id: Int!, request: RoleRequest!) : Role!
 }
