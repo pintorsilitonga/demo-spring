@@ -1,5 +1,6 @@
 package com.example.demo.module.profile;
 
+import com.example.demo.module.role.Role;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -15,8 +16,12 @@ public class Profile {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String username;
+    private String password;
     private String bio;
     private String email;
-    @Column(name = "is_active")
-    private boolean active;
+    private ProfileStatus status;
+
+    @OneToOne
+    @JoinColumn(name = "role_id")
+    private Role role;
 }
