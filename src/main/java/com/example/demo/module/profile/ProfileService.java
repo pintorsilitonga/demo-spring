@@ -25,4 +25,8 @@ public class ProfileService {
     public Profile update(Profile profile) {
         return profileRepository.save(profile);
     }
+
+    public Profile getByActiveUsername(String username) {
+        return profileRepository.findByUsernameAndStatus(username, ProfileStatus.ACTIVE).get();
+    }
 }
