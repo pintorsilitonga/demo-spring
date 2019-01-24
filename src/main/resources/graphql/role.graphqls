@@ -1,0 +1,6 @@
+type Role {
+    id: Int!
+    name: String!
+    description: String!
+    authorities: [Authority]
+}
