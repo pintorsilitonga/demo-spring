@@ -1,5 +1,7 @@
 input ProfileRequest {
     username: String!
-    bio: String
-    email: String
+    password: String!
+    bio: String!
+    email: String!
+    roleId: Int!
 }
