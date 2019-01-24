@@ -1,7 +1,14 @@
 type Profile {
     id: Int!
     username: String!
-    bio: String
-    email: String
-    active: Boolean!
+    password: String!
+    bio: String!
+    email: String!
+    status: ProfileStatus!
+    role: Role!
+}
+
+enum ProfileStatus {
+    ACTIVE
+    INACTIVE
 }
